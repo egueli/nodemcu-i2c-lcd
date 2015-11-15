@@ -70,8 +70,7 @@ end
 M.ROW_OFFSETS = {0, 0x40, 0x14, 0x54}
 
 function M.setCursor(col, row)
-    local val = bit.bor(0x80, col, M.ROW_OFFSETS[row + 1]) 
-    print (string.format("cursorcmd: %02x", val))
+    local val = bit.bor(0x80, col, M.ROW_OFFSETS[row + 1])
     sendLcd(0, val)
 end
 
